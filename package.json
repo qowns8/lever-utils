@@ -13,6 +13,7 @@
     "dev": "microbundle watch",
     "reformat": "prettier --write",
     "lint": "eslint src",
+    "prepare": "husky install",
     "test": "jest"
   },
   "repository": "https://github.com/madup-inc/lever-utils.git",
@@ -22,12 +23,6 @@
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
       "prettier --write"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "yarn lint && yarn test"
-    }
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.13.0",
