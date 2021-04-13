@@ -11,5 +11,5 @@ export const getSearchParams = (url: string): IPlainObject => {
   return params
 }
 
-export const randomStr = () =>
+export const randomStr = (): string =>
   (((1 + Math.random()) * 0x10000) | 0).toString(16)
