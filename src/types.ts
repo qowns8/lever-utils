@@ -1,3 +1,3 @@
 export interface IPlainObject {
-  [key: string]: unknown
+  [key: string]: string
 }
