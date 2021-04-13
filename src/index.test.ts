@@ -10,6 +10,8 @@ describe('utils/lib', () => {
       b: '2',
       c: '3',
     })
+    const str: string = getSearchParams('?aa=11&bb=22').aa  // check type of return value
+    expect(str).toEqual('11')
   })
   test('randomStr', () => {
     expect(randomStr() !== randomStr()).toEqual(true)
