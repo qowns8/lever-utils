@@ -23,3 +23,19 @@ serializeSearchParams()  //''
 ```js
 randomStr() // '1e82e'
 ```
+
+### isNil
+```js
+isNil(null) // true
+isNil(undefined) // true
+isNil(0) // false
+isNil('') // false
+```
+
+### isNotNil
+```js
+isNotNil(null) // false
+isNotNil(undefined) // false
+isNotNil(0) // true
+isNotNil('') // true
+```
