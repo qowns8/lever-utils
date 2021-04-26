@@ -1,6 +1,9 @@
-import { IPlainObject } from './types'
+import { IPlainObject, IPureObject } from './types'
 
-export const getSearchParams = (url: string): IPlainObject => {
+const isNil = (value: any) => value === undefined || value === null
+const isNotNil = (value: any) => !isNil(value)
+
+export const parseSearchParams = (url: string): IPlainObject => {
   const params: IPlainObject = {}
   const idx = url.indexOf('?') + 1
   const fromIdx = url.slice(idx)
@@ -10,6 +13,21 @@ export const getSearchParams = (url: string): IPlainObject => {
   })
   return params
 }
+
+export const serializeSearchParams = (obj: IPureObject): string =>
+  Object.entries(obj)
+    .map(([key, value]: [string, any]) => {
+      if (isNil(value)) {
+        return
+      }
+      let valueStr = value
+      if (Array.isArray(value)) {
+        valueStr = value.join(',')
+      }
+      return key + '=' + encodeURIComponent(valueStr)
+    })
+    .filter(isNotNil)
+    .join('&')
 
 export const randomStr = (): string =>
   (((1 + Math.random()) * 0x10000) | 0).toString(16)
