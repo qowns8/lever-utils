@@ -17,6 +17,8 @@ describe('utils/lib', () => {
     expect(serializeSearchParams({ a: 1, b: 2 })).toEqual('a=1&b=2')
     expect(serializeSearchParams({ a: 1, b: undefined })).toEqual('a=1')
     expect(serializeSearchParams({ a: 1, b: '' })).toEqual('a=1&b=')
+    expect(serializeSearchParams({})).toEqual('')
+    expect(serializeSearchParams()).toEqual('')
   })
   test('randomStr', () => {
     expect(randomStr() !== randomStr()).toEqual(true)
