@@ -1,4 +1,10 @@
-import { parseSearchParams, randomStr, serializeSearchParams } from './index'
+import {
+  parseSearchParams,
+  randomStr,
+  serializeSearchParams,
+  isNotNil,
+  isNil,
+} from './index'
 
 describe('utils/lib', () => {
   test('parseSearchParams', () => {
@@ -23,5 +29,19 @@ describe('utils/lib', () => {
   test('randomStr', () => {
     expect(randomStr() !== randomStr()).toEqual(true)
     expect(randomStr().length).toEqual(5)
+  })
+  test('isNil', () => {
+    expect(isNil(null)).toEqual(true)
+    expect(isNil(undefined)).toEqual(true)
+    expect(isNil(0)).toEqual(false)
+    expect(isNil('')).toEqual(false)
+    expect(isNil()).toEqual(true)
+  })
+  test('isNotNil', () => {
+    expect(isNotNil(null)).toEqual(false)
+    expect(isNotNil(undefined)).toEqual(false)
+    expect(isNotNil(0)).toEqual(true)
+    expect(isNotNil('')).toEqual(true)
+    expect(isNotNil()).toEqual(false)
   })
 })
