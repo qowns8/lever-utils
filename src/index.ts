@@ -14,7 +14,7 @@ export const parseSearchParams = (url: string): IPlainObject => {
   return params
 }
 
-export const serializeSearchParams = (obj: IPureObject): string =>
+export const serializeSearchParams = (obj: IPureObject = {}): string =>
   Object.entries(obj)
     .map(([key, value]: [string, any]) => {
       if (isNil(value)) {
