@@ -15,8 +15,8 @@ getSearchParams('') // {}
 serializeSearchParams({ a: 1, b: 2 }) // 'a=1&b=2'
 serializeSearchParams({ a: 1, b: undefined }) // 'a=1'
 serializeSearchParams({ a: 1, b: '' })  //'a=1&b='
-serializeSearchParams({})  //''
-serializeSearchParams()  //''
+serializeSearchParams({})  // ''
+serializeSearchParams()  // ''
 ```
 
 ### randomStr
