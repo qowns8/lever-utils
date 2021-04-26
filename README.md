@@ -10,6 +10,15 @@ getSearchParams('?aa=11&bb=22') // { aa: '11', bb: '22' }
 getSearchParams('') // {}
 ```
 
+### serializeSearchParams
+```js
+serializeSearchParams({ a: 1, b: 2 }) // 'a=1&b=2'
+serializeSearchParams({ a: 1, b: undefined }) // 'a=1'
+serializeSearchParams({ a: 1, b: '' })  //'a=1&b='
+serializeSearchParams({})  //''
+serializeSearchParams()  //''
+```
+
 ### randomStr
 ```js
 randomStr() // '1e82e'
