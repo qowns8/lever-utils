@@ -50,7 +50,9 @@ describe('Lever utils', () => {
     expect(isNotNil()).toEqual(false)
   })
 
-  test('validateBiznum.', () => {
+  test('validateBiznum', () => {
+    expect(validateBiznum('blabla')).toEqual(false)
+    expect(validateBiznum('1234567890')).toEqual(false)
     expect(validateBiznum('')).toEqual(false)
     expect(validateBiznum()).toEqual(false)
     expect(validateBiznum('2341241242')).toEqual(false) // 아무거나
