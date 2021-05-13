@@ -2,6 +2,7 @@ import { IPlainObject, IPureObject } from './types'
 
 export const isNil = (value: any = undefined) =>
   value === undefined || value === null
+
 export const isNotNil = (value: any = undefined) => !isNil(value)
 
 export const parseSearchParams = (url: string): IPlainObject => {
