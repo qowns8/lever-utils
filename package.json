@@ -1,6 +1,6 @@
 {
   "name": "@madup-inc/utils",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": false,
   "description": "Common utils of LEVER",
   "source": "src/index.ts",
@@ -17,6 +17,9 @@
     "test": "jest"
   },
   "repository": "https://github.com/madup-inc/lever-utils.git",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "author": "Keating <min9nim@gmail.com>",
   "license": "MIT",
   "lint-staged": {
