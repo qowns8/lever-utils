@@ -39,3 +39,11 @@ isNotNil(undefined) // false
 isNotNil(0) // true
 isNotNil('') // true
 ```
+
+### validateBiznum
+```js
+validateBiznum('blabla') // false
+validateBiznum('1198706634')  // true
+validateBiznum('')   // false
+validateBiznum() // false
+```
