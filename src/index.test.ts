@@ -5,6 +5,7 @@ import {
   isNotNil,
   isNil,
   validateBiznum,
+  classNames,
 } from './index'
 
 describe('Lever utils', () => {
@@ -61,5 +62,15 @@ describe('Lever utils', () => {
     expect(validateBiznum('1248100998')).toEqual(true) // 삼성전자
     expect(validateBiznum('1198702720')).toEqual(true)
     expect(validateBiznum('4528700430')).toEqual(true)
+  })
+
+  test('classNames', () => {
+    expect(classNames({ a: true, b: false })).toEqual('a')
+    expect(classNames({ a: true, b: false }, { c: true, d: true })).toEqual(
+      'a c d',
+    )
+    expect(classNames('cc', { a: true, b: false })).toEqual('cc a')
+    expect(classNames('xx', { a: true, b: false }, 'vv')).toEqual('xx a vv')
+    expect(classNames({ a: false, b: false })).toEqual(undefined)
   })
 })
