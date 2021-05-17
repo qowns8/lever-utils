@@ -47,3 +47,11 @@ validateBiznum('1198706634')  // true
 validateBiznum('')   // false
 validateBiznum() // false
 ```
+
+### classNames
+```js
+classNames({ a: true, b: false }) // 'a'
+classNames({ a: true, b: false }, { c: true, d: true }) // 'a c d'
+classNames('xx', { a: true, b: false }, 'vv') // 'xx a vv'
+classNames({ a: false, b: false })  // undefined
+```
