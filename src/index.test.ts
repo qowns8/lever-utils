@@ -69,6 +69,10 @@ describe('Lever utils', () => {
     expect(classNames({ a: true, b: false }, { c: true, d: true })).toEqual(
       'a c d',
     )
+    expect(classNames('aa', 'bb')).toEqual('aa bb')
+    expect(classNames('aa', undefined, 'cc')).toEqual('aa cc')
+    expect(classNames('aa', null, 'cc')).toEqual('aa cc')
+
     expect(classNames('cc', { a: true, b: false })).toEqual('cc a')
     expect(classNames('xx', { a: true, b: false }, 'vv')).toEqual('xx a vv')
     expect(classNames({ a: false, b: false })).toEqual(undefined)

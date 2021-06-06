@@ -63,6 +63,9 @@ export const validateBiznum = (biznum?: string): boolean => {
 
 export const classNames = (...params: any[]) => {
   const result = params.reduce((acc, value) => {
+    if (!value) {
+      return acc
+    }
     if (typeof value === 'boolean') {
       throw Error('Boolean type is not acceptable')
     }

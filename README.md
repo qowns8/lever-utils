@@ -54,4 +54,6 @@ classNames({ a: true, b: false }) // 'a'
 classNames({ a: true, b: false }, { c: true, d: true }) // 'a c d'
 classNames('xx', { a: true, b: false }, 'vv') // 'xx a vv'
 classNames({ a: false, b: false })  // undefined
+classNames('aa', undefined, 'cc') // 'aa cc'
+classNames('aa', null, 'cc')  // 'aa cc'
 ```
