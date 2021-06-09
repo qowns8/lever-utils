@@ -6,6 +6,7 @@ import {
   isNil,
   validateBiznum,
   classNames,
+  oneOf,
 } from './index'
 
 describe('Lever utils', () => {
@@ -76,5 +77,31 @@ describe('Lever utils', () => {
     expect(classNames('cc', { a: true, b: false })).toEqual('cc a')
     expect(classNames('xx', { a: true, b: false }, 'vv')).toEqual('xx a vv')
     expect(classNames({ a: false, b: false })).toEqual(undefined)
+  })
+
+  test('oneOf', () => {
+    expect(oneOf([[true, 2]])).toBe(2)
+    expect(
+      oneOf([
+        [false, 1],
+        [false, 2],
+        [true, 3],
+      ]),
+    ).toBe(3)
+    expect(
+      oneOf([
+        [false, 1],
+        [true, 2],
+        [true, 3],
+      ]),
+    ).toBe(2)
+    expect(
+      oneOf([
+        [false, 1],
+        [true, 2],
+      ]),
+    ).toBe(2)
+    expect(oneOf([[false, 1]])).toBe(undefined)
+    expect(oneOf([[false, 1]], 'zzz')).toBe('zzz')
   })
 })

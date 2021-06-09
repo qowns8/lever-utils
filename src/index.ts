@@ -81,3 +81,11 @@ export const classNames = (...params: any[]) => {
 
   return result ? result.trim() : undefined
 }
+
+export const oneOf = (
+  items: Array<[boolean, any]>,
+  defaultValue?: any,
+): any => {
+  const matched = items.find(item => item[0])
+  return matched ? matched[1] : defaultValue
+}

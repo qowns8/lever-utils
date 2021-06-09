@@ -57,3 +57,19 @@ classNames({ a: false, b: false })  // undefined
 classNames('aa', undefined, 'cc') // 'aa cc'
 classNames('aa', null, 'cc')  // 'aa cc'
 ```
+
+### oneOf
+```js
+oneOf([[true, 2]])  // 2
+oneOf([
+  [false, 1],
+  [false, 2],
+  [true, 3],
+])  // 3
+oneOf([
+  [false, 1],
+  [true, 2],
+])  // 2
+oneOf([[false, 1]]) // undefined
+oneOf([[false, 1]], 'zzz')  // 'zzz'
+```
