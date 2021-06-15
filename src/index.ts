@@ -89,3 +89,11 @@ export const oneOf = (
   const matched = items.find(item => item[0])
   return matched ? matched[1] : defaultValue
 }
+
+export const toComma = (val: string | number | null | undefined) =>
+  val
+    ? Number(val).toLocaleString('ko-KR', { maximumSignificantDigits: 10 })
+    : '0'
+
+export const toNumber = (val?: string | number | null) =>
+  +String(val).replace(/,/gi, '')
