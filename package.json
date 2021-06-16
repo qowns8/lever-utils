@@ -14,7 +14,8 @@
     "reformat": "prettier --write",
     "lint": "eslint src",
     "prepare": "husky install",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watchAll"
   },
   "repository": "https://github.com/madup-inc/lever-utils.git",
   "author": "Keating <min9nim@gmail.com>",
