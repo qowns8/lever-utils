@@ -137,8 +137,9 @@ describe('Lever utils', () => {
       ],
     ])
     expect(lazyCount).toBe(0)
+    expect(oneOf([[() => true, () => 'world']], 'hello')).toBe('world')
     expect(oneOf([[false, 1]])).toBe(undefined)
-    expect(oneOf([[false, 1]], 'zzz')).toBe('zzz')
+    expect(oneOf([[false, 1]], 0)).toBe(0)
   })
 
   test('toComma', () => {
