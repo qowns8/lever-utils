@@ -89,7 +89,7 @@ toComma('abc')	// 'NaN'
 
 ### toNumber
 ```js
-toNumber('12,345')	// 12,345
+toNumber('12,345')	// 12345
 toNumber('-1,234')  // -1234
 toNumber('1,900,000')	// 1900000
 toNumber(1234)	// 1234
