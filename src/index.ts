@@ -82,11 +82,16 @@ export const classNames = (...params: any[]) => {
   return result ? result.trim() : undefined
 }
 
+// boolean | () => boolean 으로 사용하면 문법 오류
+type fnBoolean = () => boolean
+
 export const oneOf = (
-  items: Array<[boolean, any]>,
+  items: Array<[boolean | fnBoolean, any]>,
   defaultValue?: any,
 ): any => {
-  const matched = items.find(item => item[0])
+  const matched = items.find(item =>
+    typeof item[0] === 'function' ? item[0]() : item[0],
+  )
   return matched ? matched[1] : defaultValue
 }
 
