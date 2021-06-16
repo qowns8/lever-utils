@@ -73,3 +73,28 @@ oneOf([
 oneOf([[false, 1]]) // undefined
 oneOf([[false, 1]], 'zzz')  // 'zzz'
 ```
+
+### toComma
+```js
+toComma(100000)	// '100,000'
+toComma(10.234)	// '10.234'
+toComma(-10.234)	// '-10.234'
+toComma(-10123.234)	// '-10,123.234'
+toComma(-10123.23434)	// '-10,123.23434'
+toComma(null)	// '0'
+toComma(NaN)	// '0'
+toComma(undefined)	// '0'
+toComma('abc')	// 'NaN'
+```
+
+### toNumber
+```js
+toNumber('12,345')	// 12,345
+toNumber('-1,234')  // -1234
+toNumber('1,900,000')	// 1900000
+toNumber(1234)	// 1234
+toNumber(null)	// 0
+toNumber(NaN)	// 0
+toNumber(undefined)	// 0
+toNumber('abcd')  // NaN
+```
