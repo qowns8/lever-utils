@@ -7,6 +7,8 @@ import {
   validateBiznum,
   classNames,
   oneOf,
+  toComma,
+  toNumber,
 } from './index'
 
 describe('Lever utils', () => {
@@ -103,5 +105,27 @@ describe('Lever utils', () => {
     ).toBe(2)
     expect(oneOf([[false, 1]])).toBe(undefined)
     expect(oneOf([[false, 1]], 'zzz')).toBe('zzz')
+  })
+
+  test('toComma', () => {
+    expect(toComma(100000)).toBe('100,000')
+    expect(toComma(10.234)).toBe('10.234')
+    expect(toComma(-10.234)).toBe('-10.234')
+    expect(toComma(-10123.234)).toBe('-10,123.234')
+    expect(toComma(-10123.23434)).toBe('-10,123.23434')
+    expect(toComma(null)).toBe('0')
+    expect(toComma(NaN)).toBe('0')
+    expect(toComma(undefined)).toBe('0')
+    expect(toComma('abc')).toBe('NaN')
+  })
+
+  test('toNumber', () => {
+    expect(toNumber('900,000')).toBe(900000)
+    expect(toNumber('1,900,000')).toBe(1900000)
+    expect(toNumber(1234)).toBe(1234)
+    expect(toNumber(null)).toBe(0)
+    expect(toNumber(NaN)).toBe(0)
+    expect(toNumber(undefined)).toBe(0)
+    expect(Number.isNaN(toNumber('abcd'))).toBe(true)
   })
 })
