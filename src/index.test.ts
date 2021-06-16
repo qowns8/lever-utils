@@ -120,7 +120,8 @@ describe('Lever utils', () => {
   })
 
   test('toNumber', () => {
-    expect(toNumber('900,000')).toBe(900000)
+    expect(toNumber('-1,234')).toBe(-1234)
+    expect(toNumber('12,345')).toBe(12345)
     expect(toNumber('1,900,000')).toBe(1900000)
     expect(toNumber(1234)).toBe(1234)
     expect(toNumber(null)).toBe(0)
