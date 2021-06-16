@@ -95,5 +95,12 @@ export const toComma = (val: string | number | null | undefined) =>
     ? Number(val).toLocaleString('ko-KR', { maximumSignificantDigits: 10 })
     : '0'
 
-export const toNumber = (val?: string | number | null) =>
-  +String(val).replace(/,/gi, '')
+export const toNumber = (val?: string | number | null): number => {
+  if (!val) {
+    return 0
+  }
+  if (typeof val === 'number') {
+    return val
+  }
+  return Number(String(val).replace(/,/gi, ''))
+}
