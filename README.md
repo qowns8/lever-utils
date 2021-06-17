@@ -77,6 +77,7 @@ oneOf([[false, 1]], 'zzz')  // 'zzz'
 oneOf([() => true, 1])  // 1
 oneOf([true, () => 2])  // 2
 oneOf([() => true, () => 3])  // 3
+oneOf([false, 1], () => 4)  // 4
 ```
 
 ### toComma

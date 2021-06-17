@@ -86,7 +86,7 @@ type Fn<T> = () => T
 
 export const oneOf = <T>(
   items: Array<[boolean | Fn<boolean>, T | Fn<T>]>,
-  defaultValue?: T,
+  defaultValue?: T | Fn<T>,
 ): T | undefined => {
   const matched = items.find(item =>
     typeof item[0] === 'function' ? item[0]() : item[0],
