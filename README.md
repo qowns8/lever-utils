@@ -72,6 +72,11 @@ oneOf([
 ])  // 2
 oneOf([[false, 1]]) // undefined
 oneOf([[false, 1]], 'zzz')  // 'zzz'
+
+// Lazy evaluation
+oneOf([() => true, 1])  // 1
+oneOf([true, () => 2])  // 2
+oneOf([() => true, () => 3])  // 3
 ```
 
 ### toComma
