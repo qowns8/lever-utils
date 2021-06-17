@@ -1,9 +1,9 @@
 import { IPlainObject, IPureObject } from './types'
 
-export const isNil = (value: any = undefined) =>
+export const isNil = (value: any = undefined): boolean =>
   value === undefined || value === null
 
-export const isNotNil = (value: any = undefined) => !isNil(value)
+export const isNotNil = (value: any = undefined): boolean => !isNil(value)
 
 export const parseSearchParams = (url: string): IPlainObject => {
   const params: IPlainObject = {}
@@ -61,7 +61,7 @@ export const validateBiznum = (biznum?: string): boolean => {
   return false
 }
 
-export const classNames = (...params: any[]) => {
+export const classNames = (...params: any[]): string => {
   const result = params.reduce((acc, value) => {
     if (!value) {
       return acc
@@ -95,7 +95,7 @@ export const oneOf = <T>(
   return typeof result === 'function' ? (result as Fn<T>)() : result
 }
 
-export const toComma = (val: string | number | null | undefined) =>
+export const toComma = (val: string | number | null | undefined): string =>
   val
     ? Number(val).toLocaleString('ko-KR', { maximumSignificantDigits: 10 })
     : '0'
