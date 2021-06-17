@@ -82,12 +82,21 @@ export const classNames = (...params: any[]) => {
   return result ? result.trim() : undefined
 }
 
-export const oneOf = (
-  items: Array<[boolean, any]>,
-  defaultValue?: any,
-): any => {
-  const matched = items.find(item => item[0])
-  return matched ? matched[1] : defaultValue
+// boolean | () => boolean 으로 사용하면 문법 오류
+type TFnBoolean = () => boolean
+type TFnGeneric<ResultType> = () => ResultType
+
+export const oneOf = <ResultType>(
+  items: Array<[boolean | TFnBoolean, ResultType | TFnGeneric<ResultType>]>,
+  defaultValue?: ResultType,
+): ResultType | undefined | null => {
+  const matched = items.find(item =>
+    typeof item[0] === 'function' ? item[0]() : item[0],
+  )
+  const result = matched ? matched[1] : defaultValue
+  return typeof result === 'function'
+    ? (result as TFnGeneric<ResultType>)()
+    : result
 }
 
 export const toComma = (val: string | number | null | undefined) =>
