@@ -1,9 +1,9 @@
 import { IPlainObject, IPureObject } from './types'
 
-export const isNil = (value: any = undefined) =>
+export const isNil = (value: any = undefined): boolean =>
   value === undefined || value === null
 
-export const isNotNil = (value: any = undefined) => !isNil(value)
+export const isNotNil = (value: any = undefined): boolean => !isNil(value)
 
 export const parseSearchParams = (url: string): IPlainObject => {
   const params: IPlainObject = {}
@@ -61,7 +61,7 @@ export const validateBiznum = (biznum?: string): boolean => {
   return false
 }
 
-export const classNames = (...params: any[]) => {
+export const classNames = (...params: any[]): string => {
   const result = params.reduce((acc, value) => {
     if (!value) {
       return acc
@@ -82,24 +82,20 @@ export const classNames = (...params: any[]) => {
   return result ? result.trim() : undefined
 }
 
-// boolean | () => boolean 으로 사용하면 문법 오류
-type TFnBoolean = () => boolean
-type TFnGeneric<ResultType> = () => ResultType
+type Fn<T> = () => T
 
-export const oneOf = <ResultType>(
-  items: Array<[boolean | TFnBoolean, ResultType | TFnGeneric<ResultType>]>,
-  defaultValue?: ResultType,
-): ResultType | undefined | null => {
+export const oneOf = <T>(
+  items: Array<[boolean | Fn<boolean>, T | Fn<T>]>,
+  defaultValue?: T,
+): T | undefined => {
   const matched = items.find(item =>
     typeof item[0] === 'function' ? item[0]() : item[0],
   )
   const result = matched ? matched[1] : defaultValue
-  return typeof result === 'function'
-    ? (result as TFnGeneric<ResultType>)()
-    : result
+  return typeof result === 'function' ? (result as Fn<T>)() : result
 }
 
-export const toComma = (val: string | number | null | undefined) =>
+export const toComma = (val: string | number | null | undefined): string =>
   val
     ? Number(val).toLocaleString('ko-KR', { maximumSignificantDigits: 10 })
     : '0'
