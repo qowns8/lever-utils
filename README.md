@@ -1,6 +1,39 @@
 # lever-utils
 Common utils of LEVER
 
+## Install
+To use with node:
+
+```
+$ yarn add @madup-inc/utils
+```
+
+Then in the console:
+
+```js
+const utils = require('@madup-inc/utils')
+utils.parseSearchParams('https://biz.lever.me?a=1&b=2&c=3')
+```
+
+To use directly in the browser:
+
+latest version:
+```html
+<script src="https://unpkg.com/@madup-inc/utils" />
+```
+
+or the specific version:
+
+```html
+<script src="https://unpkg.com/@madup-inc/utils@0.8.4/dist/index.umd.js" />
+<script>
+  utils.parseSearchParams('https://biz.lever.me?a=1&b=2&c=3') 
+</script>
+```
+
+<br />
+
+## Basic usage
 
 ### parseSearchParams
 ```js
