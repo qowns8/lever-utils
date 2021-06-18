@@ -145,3 +145,8 @@ toNumber(NaN)	// 0
 toNumber(undefined)	// 0
 toNumber('abcd')  // NaN
 ```
+
+### isIE
+```js
+isIE(window.navigator)  // true on Internet Explorer
+```
