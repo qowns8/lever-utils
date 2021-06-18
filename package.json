@@ -12,7 +12,9 @@
   },
   "module": "dist/index.module.js",
   "unpkg": "dist/index.umd.js",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "microbundle src/*",
     "dev": "microbundle watch",
@@ -24,6 +26,11 @@
   },
   "repository": "https://github.com/madup-inc/lever-utils.git",
   "author": "Keating <min9nim@gmail.com>",
+  "keywords": [
+    "madup",
+    "utils",
+    "lever"
+  ],
   "license": "MIT",
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
