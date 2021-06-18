@@ -15,7 +15,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "microbundle src/*",
+    "build": "microbundle",
     "dev": "microbundle watch",
     "reformat": "prettier --write",
     "lint": "eslint src",
