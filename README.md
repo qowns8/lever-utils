@@ -11,14 +11,12 @@ To use with node:
 
 ```js
 const { parseSearchParams } = require('@madup-inc/utils')
-parseSearchParams('https://biz.lever.me?a=1&b=2&c=3')
 ```
 
 or to use with esm
 
 ```js
 import { parseSearchParams } from '@madup-inc/utils'
-parseSearchParams('https://biz.lever.me?a=1&b=2&c=3')
 ```
 
 
