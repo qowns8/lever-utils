@@ -2,24 +2,34 @@
 Common utils of LEVER
 
 ## Install
-To use with node:
 
 ```
 $ yarn add @madup-inc/utils
 ```
 
-Then in the console:
+To use with node:
 
 ```js
-const utils = require('@madup-inc/utils')
-utils.parseSearchParams('https://biz.lever.me?a=1&b=2&c=3')
+const { parseSearchParams } = require('@madup-inc/utils')
+parseSearchParams('https://biz.lever.me?a=1&b=2&c=3')
 ```
+
+or to use with esm
+
+```js
+import { parseSearchParams } from '@madup-inc/utils'
+parseSearchParams('https://biz.lever.me?a=1&b=2&c=3')
+```
+
 
 To use directly in the browser:
 
 latest version:
 ```html
 <script src="https://unpkg.com/@madup-inc/utils" />
+<script>
+  utils.parseSearchParams('https://biz.lever.me?a=1&b=2&c=3') 
+</script>
 ```
 
 or the specific version:
