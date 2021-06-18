@@ -1,6 +1,6 @@
 {
   "name": "@madup-inc/utils",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "private": false,
   "description": "Common utils of LEVER",
   "source": "src/index.ts",
@@ -16,7 +16,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "microbundle src/*",
+    "build": "microbundle",
     "dev": "microbundle watch",
     "reformat": "prettier --write",
     "lint": "eslint src",
