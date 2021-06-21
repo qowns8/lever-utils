@@ -1,5 +1,6 @@
 import { isIE } from '../src'
 
+// userAgent from: https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/compatibility/hh869301(v=vs.85)?redirectedfrom=MSDN
 describe('isIE', () => {
   test('return true when Internet Explorer', () => {
     expect(
