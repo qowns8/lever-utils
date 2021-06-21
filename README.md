@@ -146,7 +146,10 @@ toNumber(undefined)	// 0
 toNumber('abcd')  // NaN
 ```
 
-### isIE
+~~### isIE~~
+
+deprecated on v0.9.1
+
 ```js
 isIE(window.navigator)  // true on Internet Explorer
 ```
