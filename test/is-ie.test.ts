@@ -69,4 +69,10 @@ describe('isIE', () => {
       }),
     ).toEqual(true)
   })
+
+  test('should be ES5 style', () => {
+    expect(isIE.toString().includes('function')).toEqual(true)
+    expect(isIE.toString().includes('const')).toEqual(false)
+    expect(isIE.toString().includes('var')).toEqual(true)
+  })
 })
