@@ -5,7 +5,7 @@ export default (
   name: string,
   cookie: string = window.document.cookie,
 ): string | undefined => {
-  let matches = cookie.match(
+  const matches = cookie.match(
     new RegExp(
       '(?:^|; )' +
         name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') +
