@@ -16,8 +16,11 @@ export default (
   let updatedCookie = encode(name) + '=' + encode(value)
 
   for (const optionKey in options) {
-    updatedCookie += '; ' + optionKey
     const optionValue = options[optionKey]
+    if (!optionValue) {
+      continue
+    }
+    updatedCookie += '; ' + optionKey
     if (optionValue !== true) {
       updatedCookie += '=' + optionValue
     }
