@@ -3,7 +3,7 @@
 // or undefined if not found
 export default (
   name: string,
-  cookie: string = document.cookie,
+  cookie: string = window.document.cookie,
 ): string | undefined => {
   let matches = cookie.match(
     new RegExp(
