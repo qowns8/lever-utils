@@ -1,6 +1,4 @@
-interface IPlainObject {
-  [key: string]: string
-}
+import { IPlainObject } from './types'
 
 export default (url: string): IPlainObject => {
   const params: IPlainObject = {}
