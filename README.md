@@ -146,8 +146,34 @@ toNumber(undefined)	// 0
 toNumber('abcd')  // NaN
 ```
 
-### isIE
+### parseCookie
+```js
+parseCookie('aa=11; bb=22')  // {aa:11, bb:22}
+```
 
+### serializeCookie
+```js
+serializeCookie('user', 'John', { secure: true, 'max-age': 3600 })  // 'user=John; path=/; secure; max-age=3600'
+serializeCookie('user', 'John', { samesite: true }) // 'user=John; path=/; samesite'
+serializeCookie('user', 'John', { samesite: false }) // 'user=John; path=/'
+serializeCookie('user', 'John', { samesite: 'lax' })  // 'user=John; path=/; samesite=lax'
+```
+
+---
+## Browser only
+
+### isIE
 ```js
 isIE(window.navigator)  // true on Internet Explorer
+```
+
+### getCookie
+```js
+// if document.cookie is 'name=keating; id=1234'
+getCookie('name') // 'keating'
+```
+
+### setCookie
+```js
+setCookie('user', 'John', { secure: true, 'max-age': 3600 })  // the cookie is set
 ```
