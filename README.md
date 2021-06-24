@@ -174,6 +174,14 @@ getCookie('name') // 'keating'
 ```
 
 ### setCookie
+> should use exactly the same path and domain options as when we set it.
 ```js
 setCookie('user', 'John', { secure: true, 'max-age': 3600 })  // the cookie is set
+```
+
+### deleteCookie
+> should use exactly the same path and domain options as when we set it.
+```js
+deleteCookie('user')
+deleteCookie('user', {domain: '.lever.me'})
 ```
