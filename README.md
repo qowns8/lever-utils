@@ -159,6 +159,15 @@ serializeCookie('user', 'John', { samesite: false }) // 'user=John; path=/'
 serializeCookie('user', 'John', { samesite: 'lax' })  // 'user=John; path=/; samesite=lax'
 ```
 
+### strMatched
+```js
+strMatched(['aa', 'bb', 'cc'], 'cc')  // true
+strMatched(['aa', 'bb', 'cc'], 'dd')  // false
+strMatched(['aa', 'bb', 'cc', /dd/], 'dd')  // true
+```
+
+<br/>
+
 ---
 ## Browser only
 
@@ -185,3 +194,4 @@ setCookie('user', 'John', { secure: true, 'max-age': 3600 })  // the cookie is s
 deleteCookie('user')
 deleteCookie('user', {domain: '.lever.me'})
 ```
+
