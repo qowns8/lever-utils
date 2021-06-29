@@ -160,6 +160,7 @@ serializeCookie('user', 'John', { samesite: 'lax' })  // 'user=John; path=/; sam
 ```
 
 ### strMatched
+> should be true when given array matches with target string
 ```js
 strMatched(['aa', 'bb', 'cc'], 'cc')  // true
 strMatched(['aa', 'bb', 'cc'], 'dd')  // false
@@ -195,3 +196,13 @@ deleteCookie('user')
 deleteCookie('user', {domain: '.lever.me'})
 ```
 
+### pathMatched
+> should be true when given array matches with `window.location.pathname`
+```js
+// when window.location.pathname is `/ads/create`
+pathMatched(['/ads/manage', '/ads/update']) // false
+pathMatched(['/ads/manage', '/ads/update', '/ads/create']) // true
+
+// Regexp is usable as a condition
+pathMatched(['/ads/manage', '/ads/update', /\/ads\/.+/]) // true
+```
