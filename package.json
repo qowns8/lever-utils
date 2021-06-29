@@ -1,6 +1,6 @@
 {
   "name": "@madup-inc/utils",
-  "version": "0.11.0",
+  "version": "0.11.1",
   "private": false,
   "description": "Common utils of LEVER",
   "source": "src/index.ts",
