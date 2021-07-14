@@ -11,6 +11,8 @@ describe('serializeCookie', () => {
     expect(
       serializeCookie('user', 'John', { secure: false, 'max-age': 3600 }),
     ).toEqual('user=John; path=/; max-age=3600')
+
+    expect(serializeCookie('user', 'John')).toEqual('user=John; path=/')
   })
   test('samesite option', () => {
     expect(serializeCookie('user', 'John', { samesite: true })).toEqual(
