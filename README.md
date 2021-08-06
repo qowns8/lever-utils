@@ -159,6 +159,16 @@ serializeCookie('user', 'John', { samesite: false }) // 'user=John; path=/'
 serializeCookie('user', 'John', { samesite: 'lax' })  // 'user=John; path=/; samesite=lax'
 ```
 
+### strMatched
+> should be true when given array matches with target string
+```js
+strMatched(['aa', 'bb', 'cc'], 'cc')  // true
+strMatched(['aa', 'bb', 'cc'], 'dd')  // false
+strMatched(['aa', 'bb', 'cc', /dd/], 'dd')  // true
+```
+
+<br/>
+
 ---
 ## Browser only
 
@@ -185,8 +195,19 @@ setCookie('user', 'John', { secure: true, 'max-age': 3600 })  // the cookie is s
 deleteCookie('user')
 deleteCookie('user', {domain: '.lever.me'})
 ```
-### fileSizeUnit
 
+### pathMatched
+> should be true when given array matches with `window.location.pathname`
+```js
+// when window.location.pathname is `/ads/create`
+pathMatched(['/ads/manage', '/ads/update']) // false
+pathMatched(['/ads/manage', '/ads/update', '/ads/create']) // true
+
+// Regexp is usable as a condition
+pathMatched(['/ads/manage', '/ads/update', /\/ads\/.+/]) // true
+```
+
+### fileSizeUnit
 ```js
 fileSizeUnit(1) // 1B
 fileSizeUnit(1024) // 1KB
