@@ -185,3 +185,17 @@ setCookie('user', 'John', { secure: true, 'max-age': 3600 })  // the cookie is s
 deleteCookie('user')
 deleteCookie('user', {domain: '.lever.me'})
 ```
+### fileSizeUnit
+
+```js
+fileSizeUnit(1) // 1B
+fileSizeUnit(1024) // 1KB
+fileSizeUnit(1024 * 1024) // 1MB
+fileSizeUnit(1024 * 1024 * 1024) // 1GB
+
+fileSizeUnit(Math.pow(1024, 2) / 3 + Math.pow(1024, 2)) // 1.33MB
+
+// when seconde argument false return-value use lowercase
+fileSizeUnit(1024, false) // 1kb
+fileSizeUnit(100, false) // 100b
+```
