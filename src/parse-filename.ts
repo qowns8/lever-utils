@@ -1,4 +1,4 @@
-export const parseFilename = (filename: string) => {
+export default (filename: string) => {
   const idx = filename.lastIndexOf('.')
   if (idx < 0) {
     return { name: filename, ext: '' }
