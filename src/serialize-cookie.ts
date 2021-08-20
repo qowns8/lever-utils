@@ -4,7 +4,7 @@ interface IOptions {
   'max-age'?: number
   expires?: Date
   secure?: boolean
-  samesite?: 'strict' | 'lax'
+  samesite?: 'strict' | 'lax' | boolean
   httpOnly?: boolean
 }
 
