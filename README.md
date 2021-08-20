@@ -167,6 +167,13 @@ strMatched(['aa', 'bb', 'cc'], 'dd')  // false
 strMatched(['aa', 'bb', 'cc', /dd/], 'dd')  // true
 ```
 
+### parseFilename
+```js
+parseFilename('aa.jpg') // { name: 'aa', ext: 'jpg' }
+parseFilename('aa.bb.cc') // { name: 'aa.bb', ext: 'cc' }
+parseFilename('aa') // { name: 'aa', ext: '' }
+```
+
 <br/>
 
 ---
