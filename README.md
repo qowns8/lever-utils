@@ -174,6 +174,21 @@ parseFilename('aa.bb.cc') // { name: 'aa.bb', ext: 'cc' }
 parseFilename('aa') // { name: 'aa', ext: '' }
 ```
 
+### downloadData
+```js
+downloadData(fileData, fileName) // download file with name fileName in fileData Blob object 
+```
+
+### downloadFile
+```js
+downloadFile('https://guide.pdf', 'guidePDF') // download file with name guidePDF via https://guide.pdf 
+```
+
+### loadJS
+```js
+// <script src='https://accounts.google.com/gsi/client' type="text/javascript"></script> will append to head tag 
+loadJs('https://accounts.google.com/gsi/client').then(() => {})
+```
 <br/>
 
 ---
