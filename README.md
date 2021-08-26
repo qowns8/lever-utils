@@ -174,23 +174,6 @@ parseFilename('aa.bb.cc') // { name: 'aa.bb', ext: 'cc' }
 parseFilename('aa') // { name: 'aa', ext: '' }
 ```
 
-### downloadData
-```js
-// download file with name 'photo.jpg' in fileData Blob object
-// fileData: {size: 5947, type: "application/vnd.ms-excel"}
-downloadData(fileData, 'photo.jpg')
-```
-
-### downloadFile
-```js
-downloadFile('https://guide.pdf', 'lever-guide.pdf') // download file with name `lever-guide.pdf`
-```
-
-### loadJs
-```js
-// <script src='https://accounts.google.com/gsi/client' type="text/javascript"></script> should be appended to head tag
-loadJs('https://accounts.google.com/gsi/client').then(() => {})
-```
 <br/>
 
 ---
@@ -243,4 +226,22 @@ fileSizeUnit(Math.pow(1024, 2) / 3 + Math.pow(1024, 2)) // 1.33MB
 // when seconde argument false return-value use lowercase
 fileSizeUnit(1024, false) // 1kb
 fileSizeUnit(100, false) // 100b
+```
+
+### downloadFile
+```js
+downloadFile('https://guide.pdf', 'lever-guide.pdf') // download file with name `lever-guide.pdf`
+```
+
+### downloadData
+```js
+// download file with name 'photo.jpg' in fileData Blob object
+// fileData: {size: 5947, type: "application/vnd.ms-excel"}
+downloadData(fileData, 'photo.jpg')
+```
+
+### loadJs
+```js
+// <script src='https://accounts.google.com/gsi/client' type="text/javascript"></script> should be appended to head tag
+loadJs('https://accounts.google.com/gsi/client').then(() => {})
 ```
