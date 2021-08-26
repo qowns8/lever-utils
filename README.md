@@ -174,6 +174,20 @@ parseFilename('aa.bb.cc') // { name: 'aa.bb', ext: 'cc' }
 parseFilename('aa') // { name: 'aa', ext: '' }
 ```
 
+### fileSizeUnit
+```js
+fileSizeUnit(1) // 1B
+fileSizeUnit(1024) // 1KB
+fileSizeUnit(1024 * 1024) // 1MB
+fileSizeUnit(1024 * 1024 * 1024) // 1GB
+
+fileSizeUnit(Math.pow(1024, 2) / 3 + Math.pow(1024, 2)) // 1.33MB
+
+// when seconde argument false return-value use lowercase
+fileSizeUnit(1024, false) // 1kb
+fileSizeUnit(100, false) // 100b
+```
+
 <br/>
 
 ---
@@ -212,20 +226,6 @@ pathMatched(['/ads/manage', '/ads/update', '/ads/create']) // true
 
 // Regexp is usable as a condition
 pathMatched(['/ads/manage', '/ads/update', /\/ads\/.+/]) // true
-```
-
-### fileSizeUnit
-```js
-fileSizeUnit(1) // 1B
-fileSizeUnit(1024) // 1KB
-fileSizeUnit(1024 * 1024) // 1MB
-fileSizeUnit(1024 * 1024 * 1024) // 1GB
-
-fileSizeUnit(Math.pow(1024, 2) / 3 + Math.pow(1024, 2)) // 1.33MB
-
-// when seconde argument false return-value use lowercase
-fileSizeUnit(1024, false) // 1kb
-fileSizeUnit(100, false) // 100b
 ```
 
 ### downloadFile
