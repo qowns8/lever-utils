@@ -186,7 +186,7 @@ downloadData(fileData, 'photo.jpg')
 downloadFile('https://guide.pdf', 'lever-guide.pdf') // download file with name `lever-guide.pdf`
 ```
 
-### loadJS
+### loadJs
 ```js
 // <script src='https://accounts.google.com/gsi/client' type="text/javascript"></script> should be appended to head tag
 loadJs('https://accounts.google.com/gsi/client').then(() => {})
