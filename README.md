@@ -176,17 +176,19 @@ parseFilename('aa') // { name: 'aa', ext: '' }
 
 ### downloadData
 ```js
-downloadData(fileData, fileName) // download file with name fileName in fileData Blob object 
+// download file with name 'photo.jpg' in fileData Blob object
+// fileData: {size: 5947, type: "application/vnd.ms-excel"}
+downloadData(fileData, 'photo.jpg')
 ```
 
 ### downloadFile
 ```js
-downloadFile('https://guide.pdf', 'guidePDF') // download file with name guidePDF via https://guide.pdf 
+downloadFile('https://guide.pdf', 'lever-guide.pdf') // download file with name `lever-guide.pdf`
 ```
 
 ### loadJS
 ```js
-// <script src='https://accounts.google.com/gsi/client' type="text/javascript"></script> will append to head tag 
+// <script src='https://accounts.google.com/gsi/client' type="text/javascript"></script> should be appended to head tag
 loadJs('https://accounts.google.com/gsi/client').then(() => {})
 ```
 <br/>
