@@ -236,12 +236,18 @@ downloadFile('https://guide.pdf', 'lever-guide.pdf') // download file with name 
 ### downloadData
 ```js
 // download file with name 'photo.jpg' in fileData Blob object
-// fileData: {size: 5947, type: "application/vnd.ms-excel"}
-downloadData(fileData, 'photo.jpg')
+axios({
+  url: 'https://images.lever.me/photo.jpg',
+  method: 'get',
+  responseType: 'blob',
+}).then(res => downloadData(res.data, 'photo.jpg'))
 ```
 
 ### loadJs
 ```js
 // <script src='https://accounts.google.com/gsi/client' type="text/javascript"></script> should be appended to head tag
-loadJs('https://accounts.google.com/gsi/client').then(() => {})
+loadJs('https://accounts.google.com/gsi/client')
+  .then(() => {
+    console.log('js loaded')
+  })
 ```
