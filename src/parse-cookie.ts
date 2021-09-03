@@ -1,6 +1,6 @@
 import { IPlainObject } from './types'
 
-type Fn = (str: string) => string
+type Fn = (str: string) => string // eslint-disable-line
 
 export default (
   cookie: string,

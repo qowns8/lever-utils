@@ -13,7 +13,7 @@ export default (
   value: string,
   options: IOptions = {},
   encode: any = encodeURIComponent,
-) => {
+): string => {
   const opt: any = {
     path: '/',
     ...options,

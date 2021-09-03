@@ -1,5 +1,5 @@
 export default (
-  arr: Array<string | RegExp | ((value: string) => boolean)>,
+  arr: Array<string | RegExp | ((value: string) => boolean)>, // eslint-disable-line
   target: string,
 ): boolean =>
   arr.some(item => {

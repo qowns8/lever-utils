@@ -9,6 +9,6 @@ interface IOptions {
   samesite?: 'strict' | 'lax'
 }
 
-export default (name: string, value: string, options: IOptions) => {
+export default (name: string, value: string, options: IOptions): void => {
   window.document.cookie = serializeCookie(name, value, options)
 }
