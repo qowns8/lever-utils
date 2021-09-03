@@ -6,5 +6,8 @@ describe('strMatched', () => {
     expect(strMatched(['aaa', 'bbb', /\d\d\d/], '123')).toEqual(true)
     expect(strMatched(['aaa', 'bbb', /\d\d\d/], '12x')).toEqual(false)
     expect(strMatched(['aa', 'bb', 'cc', /dd/], 'dd')).toEqual(true)
+    expect(
+      strMatched(['aa', value => value.startsWith('hello')], 'hello world'),
+    ).toEqual(true)
   })
 })

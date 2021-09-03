@@ -1,5 +1,5 @@
-export default (src: string) => {
-  return new Promise(resolve => {
+export default (src: string): Promise<void> => {
+  return new Promise((resolve): void => {
     const headTag = document.getElementsByTagName('head')[0]
     const newScript = document.createElement('script')
     newScript.type = 'text/javascript'

@@ -12,4 +12,8 @@ test('pathMatched', () => {
     true,
   )
   expect(pathMatched(['/ads/manage', '/ads/update', /\/ads\/.+/])).toEqual(true)
+
+  expect(pathMatched(['/creative', value => value.startsWith('/ads')])).toEqual(
+    true,
+  )
 })

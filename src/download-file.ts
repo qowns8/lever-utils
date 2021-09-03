@@ -1,4 +1,4 @@
-export default (url: string, filename: string) => {
+export default (url: string, filename: string): void => {
   // blob 데이터 또는 동일출처 url만 사용 가능
   const link = document.createElement('a')
   link.href = url
