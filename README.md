@@ -165,6 +165,7 @@ serializeCookie('user', 'John', { samesite: 'lax' })  // 'user=John; path=/; sam
 strMatched(['aa', 'bb', 'cc'], 'cc')  // true
 strMatched(['aa', 'bb', 'cc'], 'dd')  // false
 strMatched(['aa', 'bb', 'cc', /dd/], 'dd')  // true
+strMatched(['aa', value => value.startsWith('hello')], 'hello world') // true
 ```
 
 ### parseFilename
@@ -226,6 +227,9 @@ pathMatched(['/ads/manage', '/ads/update', '/ads/create']) // true
 
 // Regexp is usable as a condition
 pathMatched(['/ads/manage', '/ads/update', /\/ads\/.+/]) // true
+
+// function is also usable
+pathMatched(['/creative', value => value.startsWith('/ads')]) // true
 ```
 
 ### downloadFile
