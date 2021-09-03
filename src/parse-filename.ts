@@ -1,4 +1,4 @@
-export default (filename: string) => {
+export default (filename: string): { name: string; ext: string } => {
   const idx = filename.lastIndexOf('.')
   if (idx < 0) {
     return { name: filename, ext: '' }
