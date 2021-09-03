@@ -1,5 +1,5 @@
 export default (
-  arr: Array<string | RegExp | ((value: string) => Boolean)>,
+  arr: Array<string | RegExp | ((value: string) => boolean)>,
   target: string,
 ): boolean =>
   arr.some(item => {

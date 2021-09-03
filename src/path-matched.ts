@@ -1,5 +1,5 @@
 import { strMatched } from './index'
 
 export default (
-  paths: Array<string | RegExp | ((value: string) => Boolean)>,
+  paths: Array<string | RegExp | ((value: string) => boolean)>,
 ): boolean => strMatched(paths, window.location.pathname)
