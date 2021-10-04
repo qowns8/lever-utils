@@ -1,4 +1,4 @@
-import { oneOf } from "../src";
+import { oneOf } from '../src'
 
 describe('oneOf', () => {
   test('조건에 따라 하나의 값을 선택한다.', () => {
@@ -61,5 +61,11 @@ describe('oneOf', () => {
     expect(oneOf([[false, 1]])).toBe(undefined)
     expect(oneOf([[false, 1]], 0)).toBe(0)
     expect(oneOf([[false, 1]], () => 1)).toBe(1)
+    try {
+      // @ts-ignore
+      oneOf([1, 2], 3)
+    } catch (err) {
+      expect(err.message).toBe('item array should have 2 length')
+    }
   })
 })
