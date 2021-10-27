@@ -97,6 +97,7 @@ classNames('xx', { a: true, b: false }, 'vv') // 'xx a vv'
 classNames({ a: false, b: false })  // undefined
 classNames('aa', undefined, 'cc') // 'aa cc'
 classNames('aa', null, 'cc')  // 'aa cc'
+classNames('aa bb', 'cc') // 'aa bb cc'
 ```
 
 ### oneOf
