@@ -1,4 +1,4 @@
-import { strMatched } from './index'
+import strMatched from './str-matched'
 
 export default (
   paths: Array<string | RegExp | ((value: string) => boolean)>, // eslint-disable-line
