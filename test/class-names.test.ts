@@ -7,6 +7,8 @@ describe('class-names', () => {
       'a c d',
     )
     expect(classNames('aa', 'bb')).toEqual('aa bb')
+    expect(classNames('aa bb', 'cc')).toEqual('aa bb cc')
+    expect(classNames('aa bb', 'cc', 'dd ee')).toEqual('aa bb cc dd ee')
     expect(classNames('aa', undefined, 'cc')).toEqual('aa cc')
     expect(classNames('aa', null, 'cc')).toEqual('aa cc')
 
