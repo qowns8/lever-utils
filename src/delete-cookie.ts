@@ -1,4 +1,4 @@
-import { serializeCookie } from './index'
+import serializeCookie from './serialize-cookie'
 
 interface IOptions {
   domain?: string
