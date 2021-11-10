@@ -189,6 +189,27 @@ fileSizeUnit(1024, false) // 1kb
 fileSizeUnit(100, false) // 100b
 ```
 
+### snakeToCamel
+```js
+snakeToCamel('hello_world') // helloWolrd
+snakeToCamel('snake2_Camel') // snake2Camel
+snakeToCamel('camel') // camel
+```
+
+### camelToKabab
+```js
+camelToKabab('helloWolrd') //hello-world
+camelToKabab('camel2Kabab') //camel2-kabab
+camelToKabab('kabab') //kabab
+```
+
+### clsNms
+```js
+clsNms('visible', {hasContent: true}) // 'visiable has-content'
+clsNms('hasContent', {visible: true}) // 'has-content visiable'
+clsNms('hasContent', {visible: false}) // 'has-content'
+```
+
 <br/>
 
 ---
