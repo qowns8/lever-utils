@@ -169,6 +169,14 @@ strMatched(['aa', 'bb', 'cc', /dd/], 'dd')  // true
 strMatched(['aa', value => value.startsWith('hello')], 'hello world') // true
 ```
 
+### matched
+> curried function of `strMatched`
+```js
+matched(['aa', 'bb', 'cc'], 'cc')  // true
+matched(['aa', 'bb', 'cc'])('cc')  // true
+```
+
+
 ### parseFilename
 ```js
 parseFilename('aa.jpg') // { name: 'aa', ext: 'jpg' }
